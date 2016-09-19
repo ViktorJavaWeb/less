@@ -1,6 +1,7 @@
 package javaClass;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -9,28 +10,38 @@ import java.sql.Statement;
  */
 public class CreateNewTab {
 
-    private final static String DB_Drive = "com.mysql.jdbc.Driver";
-    private final static String URL = "jdbc:mysql://78.46.204.123:3306/TestDB9";
-    private final static String username = "testusr9";
-    private final static String password = "Test1234";
 
     private static Connection connection;
     private static Statement statement;
 
 
-   private final static String newTab = "CREATE TABLE Books(\n" +
-           "id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY) ENGINE MyISAM, " +
-           "title VARCHAR(128), " +
-           "auvtor VARCHAR(128), " +
-           "page INT(5), ";
+    private final static String newTab = "CREATE TABLE Book(" +
+            "title VARCHAR(128)," +
+            "auvtor VARCHAR(128), " +
+            "page INT(5))";
+
+// id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY) ENGINE MyISAM;
+
+
+
+//    private final static String newTab = "CREATE TABLE Books(" +
+//           "id NUMBER (5) NOT  NULL , " +
+//           "title VARCHAR(128), " +
+//           "auvtor VARCHAR(128), " +
+//           "page INT(5)) ";
 
     public static void createNewTab(){
-        ConnectionDataBases.ConnectionDataBases();
+
         try {
+            connection = ConnectionDataBases.ConnectionDataBases();
+            statement = connection.createStatement();
             statement.executeUpdate(newTab);
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }  finally {
+            CloseConnection.closeConnection();
         }
+
 
     }
 }

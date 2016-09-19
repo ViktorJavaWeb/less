@@ -17,8 +17,12 @@ public class ConnectionDriverDB {
     private static Statement statement;
 
 
-    public static void connectionDriver() throws ClassNotFoundException {
+    public static void connectionDriver() {
+        try {
             Class.forName(DB_Drive);
-            System.out.println("Driver loader assec!");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Driver loader assec!");
     }
 }

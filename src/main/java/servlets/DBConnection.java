@@ -1,6 +1,9 @@
 package servlets;
 
 import javaClass.ConnectionDataBases;
+import javaClass.CreateNewTab;
+import javaClass.InsertLine;
+
 import java.sql.Connection;
 import java.sql.Statement;
 
@@ -23,7 +26,9 @@ public class DBConnection {
     public static void main(String[] args) {
 
         //ConnectionDriverDB.connectionDriver();
-        ConnectionDataBases.ConnectionDataBases();
+        //ConnectionDataBases.ConnectionDataBases();
+        CreateNewTab.createNewTab();
+        InsertLine.insertNewLine();
 
     }
 

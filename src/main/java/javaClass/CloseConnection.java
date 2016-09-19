@@ -13,22 +13,21 @@ public class CloseConnection {
 
     public static void closeConnection(){
 
-        if (statement != null)
-            try {
-                statement.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }System.out.println("Disconected. statement");
 
-        if (connection != null){
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
+            if (statement != null){
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                ;
             }
-            System.out.println("Disconected. connection");
-        }
-
-
+            if (connection != null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
     }
 }

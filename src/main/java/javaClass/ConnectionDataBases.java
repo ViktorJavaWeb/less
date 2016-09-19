@@ -18,30 +18,19 @@ public class ConnectionDataBases {
     private static Connection connection;
     private static Statement statement;
 
-    public static void ConnectionDataBases(){
+    public static Connection ConnectionDataBases(){
+
+        ConnectionDriverDB.connectionDriver();
 
         try {
-            ConnectionDriverDB.connectionDriver();
-            try {
-
-                connection = DriverManager.getConnection(URL, username, password);
-                System.out.println("Connected.");
-                connection.close();
-                System.out.println("Disconnected.");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            connection = DriverManager.getConnection(URL, username, password);
+        return connection;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
+        return connection;
 
 
-
-
-//        finally {
-//            CloseConnection.closeConnection();
-//        }
     }
 
 
