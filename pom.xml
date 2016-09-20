@@ -9,13 +9,23 @@
     <version>1.0-SNAPSHOT</version>
 
 
+
+
     <dependencies>
+
+        <!-- ПОДКЛЮЧЕНИЕ СВЯЗЕЙ ИСПОЛЬЗОВАНИЯ СЕРВЛЕТОВ-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.36</version>
         </dependency>
 
+        <!-- ПОДКЛЮЧЕНИЕ СВЯЗЕЙ ИСПОЛЬЗОВАНИЯ СЕРВЛЕТОВ-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
 
     </dependencies>
 
