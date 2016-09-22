@@ -24,7 +24,7 @@
     width: 300px;
     height: 200px;
     border: 0px double black;
-    background: #ff9;
+    background-color: khaki;
     padding: 10px;
 }
 
@@ -74,7 +74,7 @@
 
 }
 
-legend{
+.legend{
     font-size: 20px;
     text-transform: capitalize;
 }

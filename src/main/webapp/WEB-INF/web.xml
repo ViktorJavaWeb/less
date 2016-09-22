@@ -11,7 +11,7 @@
 
     <servlet>
         <servlet-name>private_controller</servlet-name>
-        <servlet-class>controller</servlet-class>
+        <servlet-class>servlets.controller.private_controller</servlet-class>
     </servlet>
 
     <servlet-mapping>
